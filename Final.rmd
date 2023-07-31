@@ -1,6 +1,6 @@
 ---
 title: "Covid91 vaccine study Final2023"
-author: "Put your name here!"
+author: "Loie Amesquita"
 output: 
   html_document:
     number_sections: true
@@ -15,16 +15,59 @@ require(tigerstats)
 require(forcats)
 FinalDat <-read.csv(file="final.csv",header=TRUE)
 #recode to remove the annoying "X" from the dataframe
-FinalData <- FinalDat  %>% select(-one_of("X"))
+FinalData <- FinalDat %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
+FinalData$treatment <- relevel(FinalData$treatment,ref="placebo")
+#FinalData$infected <- relevel(FinalData$infected,ref="OK")
+males = filter(FinalData, sex =="M")
+females = filter(FinalData, sex =="F")
+LGBTQ = filter(FinalData, LGBTQ =="gay")
+Druggies = filter(FinalData, DrugUser =="yes")
 ```
+
+
+
 
 # Introduction
 
-A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
+A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions
+
+
+
+##Method
+
+The project asks us to evaluate the effectiveness of the new Covid921 vaccine through clinical trials. There are many variations and effectiveness between different subpopulations. Those variations are men, women, LGBTQ, and drug addicts. A full report will be prepared for each group and will include the null and alternative hypothesis and a statistical analysis of the values of p. 
+The methods will Have visual analysis using bar charts and numerical review using Pearson's 
+chi-square test, Yates for table analysis and Fisher's test to have a complete conclusions within each subgroup. Lastly we will use an efficacy confidence interval formula with coding to calculate vaccine
+efficacy in each subgroup. 
 
 ## Males
+
+```{r}
+dd2 <- males %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Females
