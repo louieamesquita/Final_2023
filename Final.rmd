@@ -56,9 +56,16 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+Observing the bar chart is becomes self evident that the males who took the Placebo Got covid 19 at around 67% of them, while those who got the vaccine got infected about 30 % of the time. The graph shows us a huge disparity between the two groups but more analyses is required to come to any sort of  conclusion. 
 
 
+## Numerical Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=males)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
 
