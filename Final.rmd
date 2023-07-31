@@ -37,7 +37,7 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ##Method
 
-The project asks us to evaluate the effectiveness of the new Covid921 vaccine through clinical trials. There are many variations and effectiveness between different subpopulations. Those variations are men, women, LGBTQ, and drug addicts. A full report will be prepared for each group and will include the null and alternative hypothesis and a statistical analysis of the values of p. 
+The project asks us to evaluate the effectiveness of the new Covid921 vaccine through clinical trials. We will also be looking at subgroups that got the placebo and see how that effected the results of the vaccine. There are many variations and effectiveness between different subgroups. Those variations are men, women, LGBTQ, and drug addicts. A full report will be prepared for each group and will include the null and alternative hypothesis and a statistical analysis of the values of p. 
 The methods will Have visual analysis using bar charts and numerical review using Pearson's 
 chi-square test, Yates for table analysis and Fisher's test to have a complete conclusions within each subgroup. Lastly we will use an efficacy confidence interval formula with coding to calculate vaccine
 efficacy in each subgroup. 
