@@ -66,7 +66,7 @@ table1 <- xtabs(~infected + treatment, data=males)
 rowPerc(table1)
 colPerc(table1)
 ```
-
+The result indicate that those who took the placebo, 69.57% got infected. Meanwhile those who got the vaccine had an infection rate of 30.43%. More results are required to make the conclusion that there is an link between infection rate and treatment. 
 
 
 
