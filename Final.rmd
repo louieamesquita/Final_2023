@@ -191,9 +191,14 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 The graph shows 85% of individuals who took the vaccine got infected and those who got the placebo had an infection rate of around 18%. The second graph shows an even split of 50% got infected regardless of the placebo and vaccine. More analisys is required but results should be interesting.
 
 
+## Numerical Results
 
 
-
+```{r}
+table3 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table3)
+colPerc(table3)
+```
 
 
 
