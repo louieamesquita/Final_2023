@@ -200,7 +200,7 @@ rowPerc(table3)
 colPerc(table3)
 ```
 
-
+The data shows that those who got the vaccine had an infection rate of 85% while those who didn't were at 15%. 
 
 
 
