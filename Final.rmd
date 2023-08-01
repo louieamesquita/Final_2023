@@ -44,6 +44,8 @@ efficacy in each subgroup.
 
 ## Males
 
+##graph for male
+
 ```{r}
 dd2 <- males %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
@@ -72,12 +74,92 @@ The result indicate that those who took the placebo, 69.57% got infected. Meanwh
 
 
 
+##inferentail
 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+malesfish <- fisher.test(table1)
+malesfish
+```
+
+According to the Chi-squared test, The p-value = 0.0000000000001098, which is a small value. meanwhile the other p-value is 0.00000000000004631. this means that those who got the vaccine 2.24 times higher to get infected compared to those who got the placebo.
+
+## Effectiveness Confidence Interval
+
+```{r}
+effect <- malesfish$p.value/(malesfish$p.value +1)
+effectivenessmales = malesfish$estimate/(malesfish$estimate +1)*100
+print(effectivenessmales)
+```
+```{r}
+low=(malesfish$conf.int[1]/(malesfish$conf.int[1] +1))*100
+hi=(malesfish$conf.int[2]/(malesfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The results show that the odds ratio is 69.15. That is a higher ratio of people getting covid 19
 
 
 
 
 ## Females
+
+##graph for female
+ 
+ 
+```{r}
+dd2 <- females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The results for females are almost similar to the males. The infection rate for females is about 60% for those who took the placebo and about 40% for those who took the vaccine.
+
+
+## Numerical Results
+
+```{r}
+table2 <- xtabs(~infected + treatment, data=females)
+rowPerc(table2)
+colPerc(table2)
+```
+
+As results show 60% of females who took the placebo got infected and 40% of females who got the vaccine got infected. The numbers also show that 98% were infected from those who took the placebo which in groups. this tells us that there is a difference in the vaccine group but more analysis is required.
+
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+femalesfish <- fisher.test(table1)
+femalesfish
+```
+
+AS the results show the p-value is 1e-04 which is less than the conventional significance level of .51, we can reject the null hypothesis . Conclude that there is a significant association between the infection status and the treatment the odds ratio is 2.2.
+
+## Efectiveness Confidence Interval
+
+
+```{r}
+effect <- femalesfish$p.value/(femalesfish$p.value +1)
+effectivenessfemale = femalesfish$estimate/(femalesfish$estimate +1)*100
+print(effectivenessfemale)
+```
+```{r}
+low=(femalesfish$conf.int[1]/(femalesfish$conf.int[1] +1))*100
+hi=(femalesfish$conf.int[2]/(femalesfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
 
 
 ## LGBTQ
