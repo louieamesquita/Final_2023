@@ -147,23 +147,17 @@ femalesfish <- fisher.test(table1)
 femalesfish
 ```
 
-
 AS the results show the p-value is 1e-04 which is less than the conventional significance level of .51, we can reject the null hypothesis . Conclude that there is a significant association between the infection status and the treatment the odds ratio is 2.2.
+
+
+
+
 
 
 ## Efectiveness Confidence Interval
 
 
-```{r}
-effect <- femalesfish$p.value/(femalesfish$p.value +1)
-effectivenessfemale = femalesfish$estimate/(femalesfish$estimate +1)*100
-print(effectivenessfemale)
-```
-```{r}
-low=(femalesfish$conf.int[1]/(femalesfish$conf.int[1] +1))*100
-hi=(femalesfish$conf.int[2]/(femalesfish$conf.int[2] +1))*100
-options(digits=2)
-```
+
 
 
 
