@@ -109,18 +109,23 @@ The results show that the odds ratio is 69.15. That is a higher ratio of people 
 ##graph for female
  
  
+```{r}
+dd2 <- females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
 
 The results for females are almost similar to the males. The infection rate for females is about 60% for those who took the placebo and about 40% for those who took the vaccine.
 
 
 ## Numerical Results
 
-```{r}
-table2 <- xtabs(~infected + treatment, data=females)
-rowPerc(table2)
-colPerc(table2)
-```
 
 As results show 60% of females who took the placebo got infected and 40% of females who got the vaccine got infected. The numbers also show that 98% were infected from those who took the placebo which in groups. this tells us that there is a difference in the vaccine group but more analysis is required.
 
