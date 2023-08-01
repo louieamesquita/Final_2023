@@ -137,12 +137,8 @@ As results show 60% of females who took the placebo got infected and 40% of fema
 
 ## Inferential Results
 
-```{r}
-chisq.test(table1)
-chisqtestGC(table1)
-femalesfish <- fisher.test(table1)
-femalesfish
-```
+
+
 
 AS the results show the p-value is 1e-04 which is less than the conventional significance level of .51, we can reject the null hypothesis . Conclude that there is a significant association between the infection status and the treatment the odds ratio is 2.2.
 
