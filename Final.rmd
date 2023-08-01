@@ -210,6 +210,7 @@ chisqtestGC(table3)
 gayfish <- fisher.test(table3)
 gayfish
 ```
+The p value result for this table is 0.000000007. This result mean that there is a direct relationship between LGBTQ and covid 19
 
 
 
