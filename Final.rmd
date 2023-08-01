@@ -109,17 +109,7 @@ The results show that the odds ratio is 69.15. That is a higher ratio of people 
 ##graph for female
  
  
-```{r}
-dd2 <- females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
-
-basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
-basicC + geom_bar(stat="identity",position="dodge")
-
-
-basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
-basicCC + geom_bar(stat="identity", position = "dodge")
-```
 
 The results for females are almost similar to the males. The infection rate for females is about 60% for those who took the placebo and about 40% for those who took the vaccine.
 
@@ -145,6 +135,8 @@ femalesfish <- fisher.test(table1)
 femalesfish
 ```
 
+
+AS the results show the p-value is 1e-04 which is less than the conventional significance level of .51, we can reject the null hypothesis . Conclude that there is a significant association between the infection status and the treatment the odds ratio is 2.2.
 
 
 ## Efectiveness Confidence Interval
