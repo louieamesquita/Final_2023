@@ -153,10 +153,21 @@ AS the results show the p-value is 1e-04 which is less than the conventional sig
 
 
 
-
 ## Efectiveness Confidence Interval
 
 
+```{r}
+effect <- femalesfish$p.value/(femalesfish$p.value +1)
+effectivenessfemale = femalesfish$estimate/(femalesfish$estimate +1)*100
+print(effectivenessfemale)
+```
+```{r}
+low=(femalesfish$conf.int[1]/(femalesfish$conf.int[1] +1))*100
+hi=(femalesfish$conf.int[2]/(femalesfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+Same results as the males. Ratio being 69
 
 
 
