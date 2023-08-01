@@ -213,10 +213,19 @@ gayfish
 The p value result for this table is 0.000000007. This result mean that there is a direct relationship between LGBTQ and covid 19
 
 
+```{r}
+effect <- gayfish$p.value/(gayfish$p.value +1)
+effectivenessgay = gayfish$estimate/(gayfish$estimate +1)*100
+print(effectivenessgay)
+```
+```{r}
+low=(gayfish$conf.int[1]/(gayfish$conf.int[1] +1))*100
+hi=(gayfish$conf.int[2]/(gayfish$conf.int[2] +1))*100
+options(digits=2)
+```
 
 
-
-
+The ratio for this result is 15. This is the lowest result so far.
 
 
 
