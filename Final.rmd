@@ -203,6 +203,19 @@ colPerc(table3)
 The data shows that those who got the vaccine had an infection rate of 85% while those who didn't were at 15%. Meanwhile the ok group were at 50% for placebo and vaccine. The results show that you are 3.5 times more likely to infected than the placebo. This result is much higher than the other 2.
 
 
+### Inferential Results
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+gayfish <- fisher.test(table3)
+gayfish
+```
+
+
+
+
+
+
 
 
 
