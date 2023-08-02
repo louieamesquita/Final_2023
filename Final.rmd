@@ -246,8 +246,7 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
-
+Umong the group durggies, the graph indicates that those with the vaccine had an infection rate of around 85% compared to who had the placebo of 10%. Around 50% of the placebo got infected and around 48% who took the placebo got infected. More analyiss is required to determen what exactly is going on. 
 
 
 
