@@ -274,14 +274,25 @@ drugfish
 
 
 The p value for this result is -0.0000000003.
-This indacates that there is strong connection between the infection rate of the group, in vaccine and placebo catagory. 
+This indacates that there is strong connection between the infection rate of the group, in vaccine and placebo category. 
 
 
 
 
+## Effectiveness Confidence Interval
+```{r}
+effect <- drugfish$p.value/(drugfish$p.value +1)
+effectivenessdrug = drugfish$estimate/(drugfish$estimate +1)*100
+print(effectivenessdrug)
+```
 
+```{r}
+low=(drugfish$conf.int[1]/(drugfish$conf.int[1] +1))*100
+hi=(drugfish$conf.int[2]/(drugfish$conf.int[2] +1))*100
+options(digits=2)
+```
 
-
+The odd ratio is at 11%. This mean that those who in the category of druggies who took the vaccine have the lowest protection from covid 19. this also mean that the vaccine has a low effectiveness towards covid 19. 
 
 
 
