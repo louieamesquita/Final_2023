@@ -299,3 +299,18 @@ The odd ratio is at 11%. This mean that those who in the category of druggies wh
 
 
 # Overall Results and Conclusions
+
+In this conclusion, the data shows us that if you only in the male and female category, taking the vaccine is recommended. While those who are part of the LGBTQ and are drug users the vaccine is not recommended. In the group LGBTQ, they are 3.5 times more likly to get covid 19 if they took this vaccine. Which means the vaccine has little effect on the virus vs if you were in the groups male and female. Those who are in the druggies category, they have a 3.1 times infection if they took the vaccine. Which also means that the vaccine is not recommended for them. In each group in order from male to druggies the effectiveness of the vaccine was 69% for male and females, 15% for LGBTQ and 11% for druggies. These are the results we concluded based on number analysis and data gathering methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
