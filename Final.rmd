@@ -262,7 +262,15 @@ The table data shows us that drug users with the placebo had an infection rate o
 This is a huge disparity between the groups there for more analysis is required. 
 
 
+## Inferential Results
 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+drugfish <- fisher.test(table1)
+drugfish
+```
 
 
 
