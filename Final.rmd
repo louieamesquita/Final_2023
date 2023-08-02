@@ -258,7 +258,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+The table data shows us that drug users with the placebo had an infection rate of 12% while 88% who took the vaccine got infected. 51% of drug that had the placebo were not infected and 49% of those with the vaccine were not infected. Only 0.4% of drug users with the placebo group were infected with covid19 while 99.6% were not infected. In short those who took the vaccine had an infection rate of 99.6% which is 3.1 times the infection rate.
+This is a huge disparity between the groups there for more analysis is required. 
 
 
 
