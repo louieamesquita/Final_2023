@@ -273,6 +273,16 @@ drugfish
 ```
 
 
+The p value for this result is -0.0000000003.
+This indacates that there is strong connection between the infection rate of the group, in vaccine and placebo catagory. 
+
+
+
+
+
+
+
+
 
 
 
